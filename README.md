@@ -7,4 +7,4 @@ gradle buildApp
 
 ## Build, install app and run integration tests
 -------------------------------------
-gradle buildApp runApp runIntegrationTests
+gradle buildRunTestApp

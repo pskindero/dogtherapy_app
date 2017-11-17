@@ -40,26 +40,36 @@ allprojects {
 	       }
 	    }
 	}
+	
+	
+	//Non-configuration tasks
+	
+	task createPackage << {}
 		
-	task printProjectInfo {
-		println "Group: " + project.group
-		println "Name: " + project.name
-		println "Version: " + project.version
-		println "Description: " + project.description
+	task printProjectInfo << {
+		println "Project: " + project.group + ":" + project.name + ":" +project.version
 	}
 	
-	task buildApp {
+	task buildApp << {
 		println "##############################"
-		dependsOn printProjectInfo
+		clean.execute()
+		printProjectInfo.execute()
+		createPackage.execute()
 		println "##############################"
 	}
 	
-	task runApp {
-		println "TODO"
+	task runApp << {
+		println "Running app"
 	}
 	
-	task runIntegrationTests {
-		println "TODO"
+	task runIntegrationTests << {
+		println "Running tests"
+	}
+	
+	task buildRunTestApp << {
+		buildApp.execute()
+		runApp.execute()
+		runIntegrationTests.execute()
 	}
 }
 

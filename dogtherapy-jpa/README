@@ -1,9 +1,8 @@
-Setup PostgreSQL on Docker
-============================
+# Setup PostgreSQL on Docker
+================================
 
-In the directory where Dockerfile is placed:
+In Dockerfile location:
 
 docker build -t dogodb_postgresql . && \
 docker run --rm -P -p 32777:5432 --name dogotherapy_db_container dogodb_postgresql
-#Get port number from docker ps
-psql -h localhost -p 49153 -d admin -U admin --password
+psql -h localhost -p 32777 -d dogtherapy_db -U admin --password

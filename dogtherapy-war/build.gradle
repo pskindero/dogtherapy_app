@@ -2,17 +2,6 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-version = '1.0'
-
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart',
-                   'Implementation-Version': version
-    }
-}
 
 buildscript {
     repositories {
@@ -23,22 +12,13 @@ buildscript {
     }
 }
 
-repositories {
-	mavenCentral()
-}
-
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+	compile libraries.spring_boot
+    compile libraries.spring_boot_test
+    compile (":dogtherapy-jpa")
+    
+    testCompile libraries.junit
 }
 
 
-uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
-    }
-}

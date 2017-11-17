@@ -1,24 +1,26 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-group = 'com.pskindero.dogtherpapy'
-version = '1.0'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 ext.libraries = [
-	javaee_api: "javax:javaee-api:8.0",
-    hibernate_core: "org.hibernate:hibernate-core:5.2.12.Final",
-    postgre_jdbc_driver: "org.postgresql:postgresql:9.4.1211.jre7",
-    spring_boot: "org.springframework.boot:spring-boot-starter-web",
-    spring_boot_test: "org.springframework.boot:spring-boot-starter-test",
+	javaee_api: 'javax:javaee-api:8.0',
+    hibernate_core: 'org.hibernate:hibernate-core:5.2.12.Final',
+    postgre_jdbc_driver: 'org.postgresql:postgresql:9.4.1211.jre7',
+    spring_boot: 'org.springframework.boot:spring-boot-starter-web',
+    spring_boot_test: 'org.springframework.boot:spring-boot-starter-test',
     
     //Test libraries
-    junit: "junit:junit:5.+"
+    junit: 'junit:junit:5.+',
+    mockito: 'org.mockito:mockito-all:1.10.19'
 ];
 
 allprojects {
+	group = 'com.pskindero.dogtherapy'
+	version = '0.0.1-SNAPSHOT'
+	description = 'The Dogtherapy web application'
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+	
 
 	jar {
 	    manifest {
@@ -38,4 +40,27 @@ allprojects {
 	       }
 	    }
 	}
+		
+	task printProjectInfo {
+		println "Group: " + project.group
+		println "Name: " + project.name
+		println "Version: " + project.version
+		println "Description: " + project.description
+	}
+	
+	task buildApp {
+		println "##############################"
+		dependsOn printProjectInfo
+		println "##############################"
+	}
+	
+	task runApp {
+		println "TODO"
+	}
+	
+	task runIntegrationTests {
+		println "TODO"
+	}
 }
+
+

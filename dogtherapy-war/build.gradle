@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 
 
 buildscript {
@@ -16,7 +17,7 @@ buildscript {
 dependencies {
 	compile libraries.spring_boot
     compile libraries.spring_boot_test
-    compile (":dogtherapy-jpa")
+    compile project(':dogtherapy-jpa')
     
     testCompile libraries.junit
 }

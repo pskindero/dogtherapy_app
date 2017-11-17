@@ -3,7 +3,8 @@
 
 ## Build application using Gradle
 -------------------------------------
-gradle build --info
+gradle buildApp
 
-## Run tests
+## Build, install app and run integration tests
 -------------------------------------
+gradle buildApp runApp runIntegrationTests

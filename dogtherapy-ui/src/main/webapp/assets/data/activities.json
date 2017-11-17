@@ -1,0 +1,27 @@
+[
+  {
+	"id" : 1,
+	"title" : "Terapia z psem",
+	"description" : "Zestaw ćwiczeń ukierunkowany na konkretny, zaplanowany cel rehabilitacyjny, do których układana jest metodyka w porozumieniu ze specjalistami i Rodzicem. Charakteryzuje się indywidualnym podejściem do każdego uczestnika, jego możliwościami i potrzebami.", 
+    "moreDesc" : "Więcej informacji Więcej informacji Więcej informacji"
+  },
+  {
+    "id" : 2,
+	"title" : "Spotkanie z psem",
+	"description" : "Zajęcia z psem mające na celu stworzenie pozytywnego kontaktu pomiędzy uczestnikami, a psem. Zajęcia SP mają za zadanie dostarczenie uczestnikom pozytywnego ładunku emocjonalnego, satysfakcji z obcowania z psem, przełamują lęki w kontaktach z otoczeniem, stymulują rozwój zmysłów i postrzegania, pozwalają oderwać się od otaczającej ich rzeczywistości.", 
+    "moreDesc" : "Więcej informacji Więcej informacji Więcej informacji"
+  },
+  {
+    "id" : 3,
+	"title" : "Wczesne wspomaganie",
+	"description" : "Jest to kompleksowe, wielospecjalistyczne wspomaganie wczesnego rozwoju Dziecka, z różnymi niepełnosprawnościami od narodzin do 6 roku życia. Zajęcia prowadzi zespół składający się z psychologa, oligofrenopedagoga, logopedy i rehabilitanta. \"Motywatorem\" do podejmowania działań we wszystkich płaszczyznach rozwoju Dziecka jest pies.", 
+    "moreDesc" : "Więcej informacji Więcej informacji Więcej informacji"
+  },
+  {
+    "id" : 4,
+	"title" : "Edukacja z psem",
+	"description" : "Zajęcia z psem mające na celu stworzenie pozytywnego kontaktu pomiędzy uczestnikami, a psem. Zajęcia SP mają za zadanie dostarczenie uczestnikom pozytywnego ładunku emocjonalnego, satysfakcji z obcowania z psem, przełamują lęki w kontaktach z otoczeniem, stymulują rozwój zmysłów i postrzegania, pozwalają oderwać się od otaczającej ich rzeczywistości.", 
+    "moreDesc" : "Więcej informacji Więcej informacji Więcej informacji"
+  }
+]
+

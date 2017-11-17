@@ -1,0 +1,3 @@
+CREATE DATABASE dogtherapy_db;
+CREATE USER admin WITH SUPERUSER PASSWORD 'admin';
+GRANT ALL PRIVILEGES ON DATABASE dogtherapy_db TO admin;

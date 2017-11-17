@@ -1,0 +1,10 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+dependencies {
+	compile libraries.javaee_api
+    compile libraries.hibernate_core
+    compile libraries.postgre_jdbc_driver
+    
+    testCompile libraries.junit
+}

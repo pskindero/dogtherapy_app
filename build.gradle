@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'com.pskindero.dogtherpapy'
+version = '1.0'
+sourceCompatibility = 1.8
+
+ext.libraries = [
+	javaee_api: "javax:javaee-api:8.0",
+    hibernate_core: "org.hibernate:hibernate-core:5.2.12.Final",
+    postgre_jdbc_driver: "org.postgresql:postgresql:9.4.1211.jre7",
+    junit: "junit:junit:5.+"
+];
+
+allprojects {
+
+	jar {
+	    manifest {
+	        attributes 'Implementation-Title': 'Gradle Quickstart',
+	                   'Implementation-Version': version
+	    }
+	}
+	
+	repositories {
+	    mavenCentral()
+	}
+	
+	uploadArchives {
+	    repositories {
+	       flatDir {
+	           dirs 'repos'
+	       }
+	    }
+	}
+}

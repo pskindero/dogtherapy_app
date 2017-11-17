@@ -1,0 +1,20 @@
+<section class="bg-primary" id="dogotherapy">
+	<div class="container">
+   		<div class="row">
+     		<div class="col-lg-12 text-center">
+            	<h2 class="section-heading">Czym zajmuje się dogoterapia?</h2>
+                <hr class="light">
+                <div class="text-faded text-justify">
+                	<p>{{$ctrl.description.visible}}</p>
+                    <div id="dogotherapyDefinition" ng-show="showExtendedDescr">
+                    	<p>{{$ctrl.description.hidden}}</p>
+                    </div>
+               	</div>
+               	<i id="expandDogotherapyDefinition" ng-hide="showExtendedDescr" ng-click="showExtendedDescription()" class="fa fa-angle-double-down fa-2x sr-button text-center" aria-hidden="true"></i>
+                <i id="hideDogotherapyDefinition" ng-show="showExtendedDescr" ng-click="hideExtendedDescription()" class="fa fa-angle-double-up fa-2x text-center" aria-hidden="true"></i>
+                <br><br>
+                <a href="#ourcopetences" class="page-scroll btn btn-default btn-xl sr-button">Więcej o nas!</a>
+        	</div>
+		</div>
+   	</div>
+</section>

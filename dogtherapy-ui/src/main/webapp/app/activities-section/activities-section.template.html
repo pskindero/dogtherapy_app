@@ -1,0 +1,34 @@
+  <section id="activities" class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Formy wsparcia</h2>
+                    <hr class="light">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div ng-repeat="activity in $ctrl.activities" class="col-md-6 text-center">
+                    <div class="service-box">
+                        <h3>{{activity.title}}</h3>
+                        <hr class="light">
+                        <p class="text-faded text-justify">{{activity.description}}
+                        </p>
+                        <br>
+                        <span id="more-btn{{activity.id}}" ng-click="showMoreAboutActivity(activity.id)" class="page-scroll btn btn-default btn-l sr-button">Więcej!</span>
+                        <br>
+                        <div id="def-window{{activity.id}}" class="def-window hidden-def">
+                          <div class="def-window-content text-justify">
+                            <span class="def-window-close">&times;</span>
+                            <h3 class="text-center">{{activity.title}}</h3>
+                            <hr class="primary">
+                            <p>{{activity.moreDesc}}</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>

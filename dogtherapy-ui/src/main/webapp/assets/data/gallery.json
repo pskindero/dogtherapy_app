@@ -1,0 +1,55 @@
+{
+   "fullsize_location" : "fullsize/",
+   "microsize_location" : "micro/",
+   "photos":[
+      {
+         "name" : "1.jpg",
+         "date" : "01.01.2016",
+	 	 "category" : "Portret Fibi",
+         "title" : "Zew natury",
+         "description" : "Dzika zabawa"
+      },
+      {
+         "name" : "2.jpg",
+         "date" : "02.01.2016",
+	 	 "category" : "Portret Fibi",
+         "title" : "Jedzenia nigdy za wiele!",
+         "description" : "Dzika zabawa"
+      },
+      {
+         "name" : "3.jpg",
+         "date" : "03.01.2016",
+	 	 "category" : "Portret Fibi",
+         "title" : "Zew natury",
+         "description" : "Dzika zabawa"
+      },
+      {
+         "name" : "4.jpg",
+         "date" : "04.01.2016",
+	 	 "category" : "Portret Fibi",
+         "title" : "Zew natury",
+         "description" : "Dzika zabawa"
+      },
+      {
+         "name" : "5.jpg",
+         "date" : "05.01.2016",
+	 	 "category" : "Portret Fibi",
+         "title" : "Zew natury",
+         "description" : "Dzika zabawa"
+      },
+      {
+         "name" : "6.jpg",
+         "date" : "06.01.2016",
+	 	 "category" : "Portret Fibi",
+         "title" : "Zew natury",
+         "description" : "Dzika zabawa"
+      },
+      {
+         "name" : "7.jpg",
+         "date" : "07.01.2016",
+	 	 "category" : "Portret Fibi",
+         "title" : "Zew natury",
+         "description" : "Dzika zabawa"
+      }
+   ]
+}

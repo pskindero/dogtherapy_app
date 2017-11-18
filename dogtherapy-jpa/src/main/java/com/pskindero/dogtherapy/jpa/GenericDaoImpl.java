@@ -2,17 +2,17 @@ package com.pskindero.dogtherapy.jpa;
 
 import java.io.Serializable;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 public class GenericDaoImpl<T, PK extends Serializable> implements GenericDao<T, PK> {
 
 	protected Class<T> entityClass;
 
+	@Inject
 	protected EntityManager entityManager;
 	
-	public GenericDaoImpl() {
-		//entityManager = EntityManagerProvider.getInstance().getEntityManager();
-	}
+	public GenericDaoImpl() {}
 
 	public T create(T entity) {
 		startTransaction();

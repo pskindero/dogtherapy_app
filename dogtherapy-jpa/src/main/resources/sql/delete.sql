@@ -1,2 +1,3 @@
-DROP TABLE contact;
-DROP TABLE social_media;
+DROP TABLE IF EXISTS contact CASCADE;
+DROP TABLE IF EXISTS app_properties;
+DROP TABLE IF EXISTS social_media;

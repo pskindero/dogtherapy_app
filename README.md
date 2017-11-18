@@ -1,10 +1,8 @@
-#Dogtherapy Web Application
+# Dogtherapy Web Application
 -------------------------------------
 
-## Build application using Gradle
--------------------------------------
-gradle buildApp
+### Gradle tasks
 
-## Build, install app and run integration tests
--------------------------------------
-gradle buildRunTestApp
+**Build application:** gradle buildApp
+
+**Build, install app and run integration tests:** gradle buildRunTestApp

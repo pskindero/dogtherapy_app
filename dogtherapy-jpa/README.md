@@ -1,5 +1,4 @@
-#Dogtherapy JPA component
-
+##Dogtherapy JPA component
 
 ### Setup PostgreSQL on Docker
 
@@ -9,4 +8,9 @@ docker run --rm -P -p 32777:5432 --name dogotherapy_db_container dogodb_postgres
 
 ##### Connect to PostgreSQL 
 psql -h localhost -p 32777 -d dogtherapy_db -U admin --password
+
+### PostgreSQL commands cheat sheat
+\dt - show tables
+\du - show users
+
 

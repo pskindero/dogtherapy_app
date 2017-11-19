@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 public class GenericDaoImpl<T, PK extends Serializable> implements GenericDao<T, PK> {
 
 	protected Class<T> entityClass;
 
-	@Inject
+	@PersistenceContext
 	protected EntityManager entityManager;
 	
 	public GenericDaoImpl() {}

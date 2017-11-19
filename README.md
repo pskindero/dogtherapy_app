@@ -1,5 +1,13 @@
 # Dogtherapy Web Application
--------------------------------------
+
+### Technologies overview:
+- Java 8, Spring framework, Spring Boot, Hibernate
+
+- HTML5, CSS, AngularJS
+
+- Gradle, Docker
+
+
 
 ### Gradle tasks
 

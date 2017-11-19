@@ -10,3 +10,9 @@ services:
     ports:
      - 32080:8080
     container_name: dogtherapy_backend
+  dogtherapy_ui:
+    build: dogtherapy-ui/
+    ports:
+     - 32081:8080
+    container_name: dogtherapy_ui
+    

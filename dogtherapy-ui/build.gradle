@@ -2,7 +2,3 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'war'
 
-createPackage << {
-	println "Package " + project.name + " into war"
-	war.execute()
-}

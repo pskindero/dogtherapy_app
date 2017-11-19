@@ -47,8 +47,6 @@ allprojects {
 	
 	
 	//Non-configuration tasks
-	
-	task createPackage << {}
 		
 	task printProjectInfo << {
 		println "Project: " + project.group + ":" + project.name + ":" +project.version
@@ -56,9 +54,7 @@ allprojects {
 	
 	task buildApp << {
 		println "##############################"
-		clean.execute()
 		printProjectInfo.execute()
-		createPackage.execute()
 		println "##############################"
 	}
 	

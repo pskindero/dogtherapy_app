@@ -1,7 +1,3 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-createPackage << {
-	println "Packaging " + project.name + " into jar"
-	jar.execute()
-}

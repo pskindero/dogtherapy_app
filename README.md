@@ -3,7 +3,7 @@
 
 ### Gradle tasks
 
-**Build application:** gradle buildApp
+**Build application:** gradle buildApp or gradle build
 
 **Build, install app and run integration tests:** gradle buildRunTestApp
 

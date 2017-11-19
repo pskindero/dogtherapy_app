@@ -8,8 +8,3 @@ dependencies {
     
     testCompile libraries.junit
 }
-
-createPackage << {
-	println "Package " + project.name + " into jar"
-	jar.execute()
-}

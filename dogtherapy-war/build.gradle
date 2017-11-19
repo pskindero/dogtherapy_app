@@ -1,9 +1,3 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
-
-
 buildscript {
     repositories {
         mavenCentral()
@@ -13,6 +7,10 @@ buildscript {
     }
 }
 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 
 dependencies {
 	compile libraries.spring_boot
@@ -20,9 +18,4 @@ dependencies {
     compile project(':dogtherapy-jpa')
     
     testCompile libraries.junit
-}
-
-createPackage << {
-	println "Package " + project.name + " into war"
-	war.execute()
 }

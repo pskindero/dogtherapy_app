@@ -5,3 +5,8 @@ services:
     ports:
      - 32777:5432
     container_name: dogotherapy_db
+  dogtherapy_backend:
+    build: dogtherapy-war/
+    ports:
+     - 32080:8080
+    container_name: dogtherapy_backend

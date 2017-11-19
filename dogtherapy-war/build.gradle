@@ -3,7 +3,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE')
+        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
     }
 }
 
@@ -11,6 +12,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
+//apply plugin: 'com.palantir.docker'
 
 dependencies {
 	compile libraries.spring_boot
@@ -19,3 +21,9 @@ dependencies {
     
     testCompile libraries.junit
 }
+
+//docker {
+//    name "${project.group}/${jar.baseName}"
+//    files jar.archivePath
+//    buildArgs(['JAR_FILE': "${jar.archiveName}"])
+//}

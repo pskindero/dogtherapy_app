@@ -18,8 +18,6 @@ dependencies {
 	compile libraries.spring_boot
     compile libraries.spring_boot_test
     compile project(':dogtherapy-jpa')
-    
-    testCompile libraries.junit
 }
 
 //docker {

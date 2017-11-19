@@ -1,0 +1,7 @@
+version: '3'
+services:
+  postgre_db:
+    build: dogtherapy-jpa/
+    ports:
+     - 32777:5432
+    container_name: dogotherapy_db

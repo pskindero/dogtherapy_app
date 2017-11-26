@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
 
-	<persistence-unit name="org.hibernate.tutorial.jpa">
+	<persistence-unit name="com.pskindero.dogtherapy.jpa">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 <!-- 		<class>com.pskindero.javaee.learning.jpadaoexample.entities.Author</class> -->
 <!-- 		<class>com.pskindero.javaee.learning.jpadaoexample.entities.Book</class> -->
@@ -11,7 +11,7 @@
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://localhost:52777/dogtherapy_db" />
+				value="jdbc:postgresql://localhost:32777/dogtherapy_db" />
 			<property name="javax.persistence.jdbc.user" value="admin" />
 			<property name="javax.persistence.jdbc.password" value="admin" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
@@ -19,6 +19,8 @@
 			<property name="hibernate.temp.use_jdbc_metadata_defaults"
 				value="false" />
 			<property name="hibernate.max_fetch_depth" value="3" />
+			<property name="hibernate.hbm2ddl.import_files_sql_extractor" 
+				value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />
 
 			<property name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />

@@ -1,9 +1,16 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE')
+    }
+}
+
+apply plugin: 'org.springframework.boot'
 
 dependencies {
-	compile libraries.javaee_api
-    compile libraries.hibernate_core
+    compile libraries.spring_data_jpa_starter
     compile libraries.postgre_jdbc_driver
     
     testCompile libraries.junit

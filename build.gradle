@@ -1,10 +1,6 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-
 ext.libraries = [
-	javaee_api: 'javax:javaee-api:8.0',
-  
-    hibernate_core: 'org.hibernate:hibernate-core:5.2.12.Final',
+	javaee_api: 'javax:javaee-api:8.0', 
+    spring_data_jpa_starter: 'org.springframework.boot:spring-boot-starter-data-jpa:1.5.8.RELEASE',
     postgre_jdbc_driver: 'org.postgresql:postgresql:9.4.1211.jre7',
   
     spring_boot: 'org.springframework.boot:spring-boot-starter-web',
@@ -18,13 +14,16 @@ ext.libraries = [
 ];
 
 allprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+
 	group = 'com.pskindero.dogtherapy'
 	version = '0.0.1'
 	description = 'The Dogtherapy web application'
 
 	sourceCompatibility = 1.8
 	targetCompatibility = 1.8
-	
 
 	jar {
 	    manifest {

@@ -5,8 +5,7 @@
 
 	<persistence-unit name="com.pskindero.dogtherapy.jpa">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-<!-- 		<class>com.pskindero.javaee.learning.jpadaoexample.entities.Author</class> -->
-<!-- 		<class>com.pskindero.javaee.learning.jpadaoexample.entities.Book</class> -->
+ 		<class>com.pskindero.dogtherapy.jpa.model.Contact</class> 
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
@@ -14,6 +13,7 @@
 				value="jdbc:postgresql://localhost:32777/dogtherapy_db" />
 			<property name="javax.persistence.jdbc.user" value="admin" />
 			<property name="javax.persistence.jdbc.password" value="admin" />
+			
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			<property name="show_sql" value="true" />
 			<property name="hibernate.temp.use_jdbc_metadata_defaults"
@@ -34,7 +34,7 @@
 			<property name="javax.persistence.sql-load-script-source"
 				value="src/main/resources/sql/insert.sql" />
 			<property name="javax.persistence.schema-generation.drop-script-source"
-				value="src/main/resources/sql/drop.sql" />
+				value="src/main/resources/sql/delete.sql" />
 
 		</properties>
 	</persistence-unit>

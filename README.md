@@ -21,3 +21,8 @@
 docker-compose up --build
 
 Remove all images: docker rmi $(docker images -q)
+
+###TODO
+- jpa - use only persistence.xml
+- docker - read params of db from
+- docker - create schema from script

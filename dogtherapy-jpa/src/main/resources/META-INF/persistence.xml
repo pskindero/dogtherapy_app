@@ -30,11 +30,11 @@
 				value="script" />
 			
 			<property name="javax.persistence.schema-generation.create-script-source"
-				value="src/main/resources/sql/create.sql" />
+				value="sql/create.sql" />
 			<property name="javax.persistence.sql-load-script-source"
-				value="src/main/resources/sql/insert.sql" />
+				value="sql/insert.sql" />
 			<property name="javax.persistence.schema-generation.drop-script-source"
-				value="src/main/resources/sql/delete.sql" />
+				value="sql/delete.sql" />
 
 		</properties>
 	</persistence-unit>

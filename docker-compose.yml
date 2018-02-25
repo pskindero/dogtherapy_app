@@ -5,12 +5,11 @@ services:
   postgre_db:
     container_name: dogtherapy_db
     build: dogtherapy-jpa/
-    ports:
-     - 32777:5432
     networks:
       app_network:
         ipv4_address: 172.168.0.102
-     
+    expose:
+     - "5432" 
   
   dogtherapy_backend:
     container_name: dogtherapy_backend

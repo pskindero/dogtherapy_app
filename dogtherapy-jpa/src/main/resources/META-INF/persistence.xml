@@ -10,7 +10,7 @@
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://172.168.0.102:32777/dogtherapy_db" />
+				value="jdbc:postgresql://172.168.0.102:5432/dogtherapy_db" />
 			<property name="javax.persistence.jdbc.user" value="admin" />
 			<property name="javax.persistence.jdbc.password" value="admin" />
 			

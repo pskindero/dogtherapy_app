@@ -8,6 +8,11 @@
 - Gradle, Docker
 
 
+### Versions
+
+v0.0.1   Backend is working from IDE
+
+
 
 ### Gradle tasks
 

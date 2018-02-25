@@ -13,9 +13,9 @@ apply plugin: 'war'
 //apply plugin: 'com.palantir.docker'
 
 dependencies {
+    compile project(':dogtherapy-jpa')
 	compile libraries.spring_boot
     compile libraries.spring_boot_test
-    compile project(':dogtherapy-jpa')
 }
 
 //war {

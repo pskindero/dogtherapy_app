@@ -7,10 +7,6 @@ buildscript {
     }
 }
 
-apply plugin: 'org.springframework.boot'
-
-
-
 dependencies {
     compile libraries.spring_data_jpa_starter
     compile libraries.postgre_jdbc_driver

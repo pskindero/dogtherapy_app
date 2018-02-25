@@ -35,10 +35,10 @@ services:
      - 32081:8080
     links:
      - dogtherapy_backend:backend
+     - postgre_db:db
     networks:
       app_network:
         ipv4_address: 172.168.0.100
-     
 
 networks:
   app_network:

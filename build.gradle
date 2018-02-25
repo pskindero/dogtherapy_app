@@ -5,6 +5,7 @@ ext.libraries = [
   
     spring_boot: 'org.springframework.boot:spring-boot-starter-web',
     spring_boot_test: 'org.springframework.boot:spring-boot-starter-test',
+    spring_boot_security: 'org.springframework.boot:spring-boot-starter-security:1.5.8.RELEASE',
   
     log4j: 'org.apache.logging.log4j:log4j-core:2.9.1',
     
@@ -42,33 +43,6 @@ allprojects {
 	           dirs 'repos'
 	       }
 	    }
-	}
-	
-	
-	//Non-configuration tasks
-		
-	task printProjectInfo << {
-		println "Project: " + project.group + ":" + project.name + ":" +project.version
-	}
-	
-	task buildApp << {
-		println "##############################"
-		printProjectInfo.execute()
-		println "##############################"
-	}
-	
-	task runApp << {
-		println "Running app"
-	}
-	
-	task runIntegrationTests << {
-		println "Running tests"
-	}
-	
-	task buildRunTestApp << {
-		buildApp.execute()
-		runApp.execute()
-		runIntegrationTests.execute()
 	}
 }
 

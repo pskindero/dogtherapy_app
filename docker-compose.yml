@@ -1,18 +1,48 @@
 version: '3'
+
+
 services:
   postgre_db:
+    container_name: dogtherapy_db
     build: dogtherapy-jpa/
     ports:
      - 32777:5432
-    container_name: dogotherapy_db
+    networks:
+      app_network:
+        ipv4_address: 172.168.0.102
+     
+  
   dogtherapy_backend:
+    container_name: dogtherapy_backend
     build: dogtherapy-war/
+    depends_on:
+     - postgre_db
     ports:
      - 32080:8080
-    container_name: dogtherapy_backend
+    links:
+     - postgre_db:db
+    networks:
+      app_network:
+        ipv4_address: 172.168.0.101
+        
   dogtherapy_ui:
+    container_name: dogtherapy_ui
     build: dogtherapy-ui/
+    depends_on:
+     - postgre_db
+     - dogtherapy_backend
     ports:
      - 32081:8080
-    container_name: dogtherapy_ui
-    
+    links:
+     - dogtherapy_backend:backend
+    networks:
+      app_network:
+        ipv4_address: 172.168.0.100
+     
+
+networks:
+  app_network:
+    driver: bridge
+    ipam:
+      config:
+       - subnet: 172.168.0.0/24

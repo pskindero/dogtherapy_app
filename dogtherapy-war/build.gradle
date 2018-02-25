@@ -18,6 +18,12 @@ dependencies {
     compile project(':dogtherapy-jpa')
 }
 
+//war {
+//  from {
+//    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+//  }
+//}
+
 //docker {
 //    name "${project.group}/${jar.baseName}"
 //    files jar.archivePath

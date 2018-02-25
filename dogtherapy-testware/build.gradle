@@ -1,0 +1,5 @@
+dependencies {
+	compile project(':dogtherapy-jpa')
+ 	compile project(':dogtherapy-war')
+   	compile project(':dogtherapy-ui')
+ }

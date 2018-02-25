@@ -1,3 +1,17 @@
+create table roles (
+  name VARCHAR(20) PRIMARY KEY
+);
+
+CREATE TABLE users(
+   username VARCHAR(20) NOT NULL,
+   password VARCHAR(20) NOT NULL,
+   email VARCHAR(40) NOT NULL UNIQUE,
+   enabled boolean NOT NULL DEFAULT TRUE,
+   role_name VARCHAR(20) REFERENCES roles(name), 
+   primary key(username)
+);
+
+
 CREATE TABLE IF NOT EXISTS contact (
 	id SERIAL PRIMARY KEY,  
 	phone CHAR(18) NOT NULL,
@@ -8,7 +22,7 @@ CREATE TABLE IF NOT EXISTS social_media (
 	id SERIAL PRIMARY KEY,
     name VARCHAR(48) NOT NULL,
     url VARCHAR(98) NOT NULL UNIQUE,
-    icon_url varchar(96),
+    icon_url VARCHAR(96),
 	contact_id INT REFERENCES contact(id) 
 );
 

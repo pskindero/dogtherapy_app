@@ -11,18 +11,31 @@
 
 ### Gradle tasks
 
-**Build application:** gradle build
-
-**Build, install app and run integration tests:** gradle buildRunTestApp
+**Build application:** gradle clean build --refresh-dependencies
 
 
 ### Setup system using Docker
 
 docker-compose up --build
 
-Remove all images: docker rmi $(docker images -q)
+Remove all containers:
+	docker rm $(docker ps -a -q)
+Remove all networks:
+    docker network rm $(docker network ls -q)
 
+Remove all images: 
+	docker rmi $(docker images -q)
+	docker-compose rm --all
+
+Get container id: 
+	docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $CONTANER_ID
+
+Get container logs:
+   docker logs CONTAINER_ID
+	
 ###TODO
+- prepare db schema
+- gradle - jar-with-dependencies
 - jpa - use only persistence.xml
 - docker - read params of db from
 - docker - create schema from script

@@ -14,7 +14,7 @@ public class DbConfiguration extends WebMvcConfigurerAdapter{
 	public DataSource dataSource() {
 		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
 		dataSourceBuilder.driverClassName("org.postgresql.Driver");
-		dataSourceBuilder.url("jdbc:postgresql://localhost:32777/dogtherapy_db");
+		dataSourceBuilder.url("jdbc:postgresql://172.168.0.102:5432/dogtherapy_db");
 		dataSourceBuilder.username("admin");
 		dataSourceBuilder.password("admin");
 		return dataSourceBuilder.build();

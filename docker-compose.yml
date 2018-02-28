@@ -1,6 +1,5 @@
 version: '3'
 
-
 services:
   postgre_db:
     container_name: dogtherapy_db

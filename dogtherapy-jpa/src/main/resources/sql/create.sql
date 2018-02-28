@@ -11,6 +11,10 @@ CREATE TABLE users(
    primary key(username)
 );
 
+CREATE TABLE user_roles(
+   role VARCHAR(20) NOT NULL REFERENCES roles(name),
+   username VARCHAR(20) NOT NULL REFERENCES users(username),
+);
 
 CREATE TABLE IF NOT EXISTS contact (
 	id SERIAL PRIMARY KEY,  

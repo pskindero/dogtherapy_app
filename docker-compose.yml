@@ -16,10 +16,10 @@ services:
     build: dogtherapy-war/
     depends_on:
      - postgre_db
-    ports:
-     - 32080:8080
     links:
      - postgre_db:db
+    expose:
+     - "8080"
     networks:
       app_network:
         ipv4_address: 172.168.0.101
@@ -30,8 +30,8 @@ services:
     depends_on:
      - postgre_db
      - dogtherapy_backend
-    ports:
-     - 32081:8080
+    expose:
+     - "8080"
     links:
      - dogtherapy_backend:backend
      - postgre_db:db

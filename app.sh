@@ -2,7 +2,6 @@
 
 SCR_NAME=$0
 
-
 #Exit codes
 SUCCESS=0
 FAILURE=1
@@ -10,6 +9,7 @@ FAILURE=1
 GRADLE=/usr/bin/gradle
 DOCKER=/usr/bin/docker
 DOCKER_COMPOSE=/usr/local/bin/docker-compose
+
 
 print_usage() {
   echo "Usage: " 
@@ -57,12 +57,13 @@ tests() {
 if [ $# != 0 ]; then
 
   INPUT=$@
-  if [ $# == 1 && "$1" == "all" ]; then
-    INPUT="remove build deploy test"
+  if [[ "$#" == "1" && "$1" == "all" ]]; then
+    INPUT="remove build deploy tests"
   fi
 
-  for ARG in "$@"
+  for ARG in $INPUT[@]
   do
+
     rc=$SUCCESS
     case $ARG in
       "build") 

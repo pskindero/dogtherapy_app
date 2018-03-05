@@ -1,4 +1,4 @@
 include 'dogtherapy-jpa'
 include 'dogtherapy-war'
 include 'dogtherapy-ui'
-include 'dogtherapy-testware'
+//include 'dogtherapy-testware'

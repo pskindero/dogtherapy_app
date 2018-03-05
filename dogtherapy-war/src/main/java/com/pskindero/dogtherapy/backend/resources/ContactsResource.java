@@ -1,4 +1,4 @@
-package com.pskindero.dogtherapy.dogtherapy_war.resources;
+package com.pskindero.dogtherapy.backend.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +18,4 @@ public class ContactsResource {
 	public @ResponseBody Iterable<Contact> getContacts() {
 		return contactRepository.findAll();
 	}
-	
-//	@RequestMapping("/contact")
-//	public @ResponseBody String getContacts() {
-//		return "works";
-//	}
 }

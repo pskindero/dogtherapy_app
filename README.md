@@ -11,6 +11,7 @@
 ### Versions
 
 v0.0.1   Backend is working from IDE
+v0.0.3   All working, ports and IPs for containers
 
 
 

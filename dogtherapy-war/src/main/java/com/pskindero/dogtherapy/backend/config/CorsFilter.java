@@ -1,4 +1,4 @@
-package com.pskindero.dogtherapy.dogtherapy_war.config;
+package com.pskindero.dogtherapy.backend.config;
 
 import java.io.IOException;
 

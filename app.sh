@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# TODO:
+# - fix problem with wrong java in sudo mode
+#
+#
+#
 
 SCR_NAME=$0
 
@@ -14,6 +20,7 @@ DOCKER_COMPOSE=/usr/local/bin/docker-compose
 print_usage() {
   echo "Usage: " 
   echo "${SCR_NAME} ARG"
+  echo "  all remove build deploy tests"
 }
 
 build() {
@@ -46,11 +53,11 @@ remove() {
 
 tests() { 
   echo "STARTING STEP - Run tests"
+  #TODO
   rc=$?
   echo "FINISHED STEP - Build application, result: $rc"
   return $rc
 }
-
 
 ############## MAIN PROGRAM ######################
 
@@ -60,6 +67,7 @@ if [ $# != 0 ]; then
   if [[ "$#" == "1" && "$1" == "all" ]]; then
     INPUT="remove build deploy tests"
   fi
+  echo "ARGS: $INPUT"
 
   for ARG in $INPUT[@]
   do

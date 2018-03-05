@@ -1,8 +1,8 @@
-create table roles (
+CREATE TABLE IF NOT EXISTS roles (
   name VARCHAR(20) PRIMARY KEY
 );
 
-CREATE TABLE users(
+CREATE TABLE IF NOT EXISTS users(
    username VARCHAR(20) NOT NULL,
    password VARCHAR(20) NOT NULL,
    email VARCHAR(40) NOT NULL UNIQUE,
@@ -11,10 +11,10 @@ CREATE TABLE users(
    primary key(username)
 );
 
-CREATE TABLE user_roles(
-   role VARCHAR(20) NOT NULL REFERENCES roles(name),
-   username VARCHAR(20) NOT NULL REFERENCES users(username),
-);
+--CREATE TABLE IF NOT EXISTS user_roles(
+--   role VARCHAR(20) NOT NULL REFERENCES roles(name),
+--   username VARCHAR(20) NOT NULL REFERENCES users(username)
+--);
 
 CREATE TABLE IF NOT EXISTS contact (
 	id SERIAL PRIMARY KEY,  

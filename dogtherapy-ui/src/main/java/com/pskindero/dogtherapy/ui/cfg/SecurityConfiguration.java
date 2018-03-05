@@ -1,4 +1,4 @@
-package com.pskindero.dogtherapy.dogtherapy_ui.cfg;
+package com.pskindero.dogtherapy.ui.cfg;
 
 import javax.sql.DataSource;
 

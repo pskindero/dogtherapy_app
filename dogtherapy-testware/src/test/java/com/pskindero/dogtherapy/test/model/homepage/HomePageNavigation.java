@@ -4,9 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.pskindero.dogtherapy.test.model.PageObject;
+import com.pskindero.dogtherapy.test.model.PageFragment;
 
-public class HomePageNavigation extends PageObject {
+public class HomePageNavigation extends PageFragment {
+	
+	
+	@FindBy(id="topNav")
+	private WebElement topMenuElem;
 	
 	@FindBy(id="dogotherapyNav")
 	private WebElement dogtherapyMenuElem;
@@ -27,7 +31,11 @@ public class HomePageNavigation extends PageObject {
 		super(driver);
 	}
 	
-	public void goToMainTab() {
+	public void goToTopOfPage() {
+		topMenuElem.click();
+	}
+	
+	public void goToDogtherapyTab() {
 		dogtherapyMenuElem.click();
 	}
 	

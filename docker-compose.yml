@@ -18,7 +18,7 @@ services:
     links:
      - postgre_db:db
     expose:
-     - "8080"
+     - "8443"
     networks:
       app_network:
         ipv4_address: 172.168.0.101
@@ -30,7 +30,7 @@ services:
      - postgre_db
      - dogtherapy_backend
     expose:
-     - "8080"
+     - "8443"
     links:
      - dogtherapy_backend:backend
      - postgre_db:db

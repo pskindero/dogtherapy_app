@@ -38,5 +38,6 @@ public class ContactsTab extends PageFragment {
 
 	public WebElement getFbProfileElement() {
 		return fbProfileElement;
-	}	
+	}
+
 }

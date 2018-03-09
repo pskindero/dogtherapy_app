@@ -3,7 +3,7 @@ package com.pskindero.dogtherapy.test.model;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageFragment {
+public abstract class PageFragment {
 
 	protected WebDriver driver;
 	

@@ -31,7 +31,7 @@ public class EndpointsDefinitions {
 	
 	
 	public static final EndpointDefinition CONTACT_ENDPOINT = 
-			new EndpointDefinition("http://172.168.0.101:8080/contact", RequestMethod.GET);
+			new EndpointDefinition("http://172.168.0.101:8443/contact", RequestMethod.GET);
 	
 	private Set<EndpointDefinition> allEndpoints;
 	

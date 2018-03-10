@@ -11,6 +11,7 @@
 ### Versions
 
 v0.0.1   Backend is working from IDE
+
 v0.0.3   All working, ports and IPs for containers
 
 
@@ -26,6 +27,7 @@ docker-compose up --build
 
 Remove all containers:
 	docker rm $(docker ps -a -q)
+
 Remove all networks:
     docker network rm $(docker network ls -q)
 
@@ -39,9 +41,8 @@ Get container id:
 Get container logs:
    docker logs CONTAINER_ID
 	
-###TODO
+### TODO
 - prepare db schema
-- gradle - jar-with-dependencies
 - jpa - use only persistence.xml
 - docker - read params of db from
 - docker - create schema from script

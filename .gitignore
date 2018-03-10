@@ -2,5 +2,7 @@
 .project
 .gradle
 .classpath
+.gradle
+.egradle
 build
 bin

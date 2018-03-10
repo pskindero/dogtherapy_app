@@ -6,7 +6,7 @@ import com.pskindero.dogtherapy.test.model.PageObject;
 
 public class HomePage extends PageObject {
 	
-	private static final String URL_VIA_IP = "http://172.168.0.100:8443";
+	private static final String URL_VIA_IP = "https://172.168.0.100:8443";
 	
 	private HomePageNavigation navigation;
 	private HeaderTab headerTab;

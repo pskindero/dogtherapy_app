@@ -20,6 +20,9 @@ public class CheckAllEnpointsTest {
 
 	@BeforeClass
 	public static void findAllGetEndpoints() {
+		HttpsURLConnection.setDefaultHostnameVerifier(
+			    SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+		
 		EndpointsDefinitions def = new EndpointsDefinitions();
 		endpoints = def.getAllEndpointsFilteredByMethod(RequestMethod.GET);
 	}

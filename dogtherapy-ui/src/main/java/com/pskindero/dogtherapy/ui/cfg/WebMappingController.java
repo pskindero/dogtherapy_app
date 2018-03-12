@@ -20,9 +20,4 @@ public class WebMappingController {
 	public String loginPage() {
 		return "login.html";
 	}
-	
-	@RequestMapping(value = {"/blad"})
-	public String errorPage() {
-		return "error.html";
-	}
 }

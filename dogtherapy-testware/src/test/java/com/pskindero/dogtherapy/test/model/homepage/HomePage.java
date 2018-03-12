@@ -23,10 +23,6 @@ public class HomePage extends PageObject {
 		driver.get(URL_VIA_IP);
 	}
 	
-	public String getTitle() {
-		return driver.getTitle();
-	}
-	
 	public HomePageNavigation navigate() {
 		return navigation;
 	}

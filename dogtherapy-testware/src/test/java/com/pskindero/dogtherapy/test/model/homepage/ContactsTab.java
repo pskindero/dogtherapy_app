@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.pskindero.dogtherapy.test.model.PageFragment;
+import com.pskindero.dogtherapy.test.model.PageObject;
 
-public class ContactsTab extends PageFragment {
+public class ContactsTab extends PageObject {
 
 	@FindBy(id="slogan")
 	private WebElement sloganElement;

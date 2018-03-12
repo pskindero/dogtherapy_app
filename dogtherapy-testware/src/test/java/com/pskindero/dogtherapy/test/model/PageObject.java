@@ -11,4 +11,8 @@ public abstract class PageObject {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
+	public String getTitle() {
+		return driver.getTitle();
+	}
 }

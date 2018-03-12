@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.pskindero.dogtherapy.test.model.PageFragment;
+import com.pskindero.dogtherapy.test.model.PageObject;
 
-public class HeaderTab extends PageFragment{
+public class HeaderTab extends PageObject{
 
 	@FindBy(id="homeHeading")
 	private WebElement homeHeadingElement;

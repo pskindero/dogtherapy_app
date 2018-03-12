@@ -1,19 +1,11 @@
-//buildscript {
-//	repositories {
-//		mavenCentral()
-//	}
-//    dependencies {
-//        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
-//    }
-//}
 
-//apply plugin: 'org.junit.platform.gradle.plugin'
  
 dependencies {
    	compile libraries.selenium
    	compile libraries.junit4
    	
 	compile libraries.spring_boot
+	compile libraries:spring_boot_thymeleaf
     compile libraries.spring_boot_test
 
     compile("org.springframework:spring-web:5.0.4.RELEASE")

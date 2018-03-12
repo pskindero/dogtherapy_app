@@ -4,10 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.pskindero.dogtherapy.test.model.PageFragment;
+import com.pskindero.dogtherapy.test.model.PageObject;
 
-public class HomePageNavigation extends PageFragment {
-	
+public class HomePageNavigation extends PageObject {
 	
 	@FindBy(id="topNav")
 	private WebElement topMenuElem;

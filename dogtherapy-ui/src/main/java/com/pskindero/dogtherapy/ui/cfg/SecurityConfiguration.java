@@ -32,7 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/").permitAll()
 				.antMatchers("/administrator").authenticated().and()
 				.formLogin().loginPage("/zaloguj").permitAll().and().logout().permitAll();
-
-		http.exceptionHandling().accessDeniedPage("/blad");
+//
+//		http.exceptionHandling().accessDeniedPage("/blad");
 	}
 }

@@ -1,19 +1,12 @@
 # Dogtherapy Web Application
 
-### Technologies overview:
-- Java 8, Spring framework, Spring Boot, Hibernate
-
-- HTML5, CSS, AngularJS
-
-- Gradle, Docker
-
 
 ### Versions
 
-v0.0.1   Backend is working from IDE
-
-v0.0.3   All working, ports and IPs for containers
-
+v0.0.1          Backend is working from IDE
+v0.0.2          Backend and frontend is working from IDE
+v0.0.3          All working, ports and IPs for containers
+v0.0.4          HTTPS
 
 
 ### Gradle tasks
@@ -23,21 +16,18 @@ v0.0.3   All working, ports and IPs for containers
 
 ### Setup system using Docker
 
-docker-compose up --build
-
+Build application:
+	docker-compose up --build
 Remove all containers:
 	docker rm $(docker ps -a -q)
-
 Remove all networks:
-    docker network rm $(docker network ls -q)
-
-Remove all images: 
+	docker network rm $(docker network ls -q)
+Remove all images:
 	docker rmi $(docker images -q)
 	docker-compose rm --all
 
 Get container id: 
 	docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $CONTANER_ID
-
 Get container logs:
    docker logs CONTAINER_ID
 	

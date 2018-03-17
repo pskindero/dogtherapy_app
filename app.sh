@@ -3,14 +3,19 @@
 # TODO:
 # - fix problem with wrong java in sudo mode
 #
-#
-#
 
 SCR_NAME=$0
 
 #Exit codes
 SUCCESS=0
 FAILURE=1
+
+#Input arguments
+CLEANUP_STEP="cleanup"
+BUILD_STEP="build"
+DEPLOY_STEP="deploy"
+TEST_STEP="test"
+ALL_STEPS="all"
 
 GRADLE=/usr/bin/gradle
 DOCKER=/usr/bin/docker
@@ -19,12 +24,18 @@ DOCKER_COMPOSE=/usr/local/bin/docker-compose
 
 print_usage() {
   echo "Usage: " 
-  echo "${SCR_NAME} ARG"
-  echo "  all remove build deploy tests"
+  echo "${SCR_NAME} ARGS"
+  echo "  $ALL_STEPS"
+  echo "  $CLEANUP_STEP"
+  echo "  $BUILD_STEP"
+  echo "  $DEPLOY_STEP"
+  echo "  $TEST_STEP"
+  echo "  $ALL_STEPS"
 }
 
 build() {
   echo "STARTING STEP - Build application"
+  sudo chmod -R 777 *
   ${GRADLE} clean build
   rc=$?
   echo "FINISHED STEP - Build application, result: $rc"
@@ -37,10 +48,9 @@ deploy() {
   rc=$?
   echo "FINISHED STEP - Deploy application, result: $rc"
   return $rc
-
 }
 
-remove() {
+cleanup_env() {
   echo "STARTING STEP - Cleanup environment"
   sudo ${DOCKER} stop $(${DOCKER} ps -a -q)
   sudo ${DOCKER} network rm $(${DOCKER} network ls -q)
@@ -63,30 +73,28 @@ tests() {
 
 if [ $# != 0 ]; then
 
-  INPUT=$@
-  if [[ "$#" == "1" && "$1" == "all" ]]; then
-    INPUT="remove build deploy tests"
+  if [[ "$#" == "1" && "$1" == "$ALL_STEPS" ]]; then
+    INPUT="$CLEANUP_STEP $BUILD_STEP $DEPLOY_STEP $TEST_STEP"
+  else
+    INPUT=( "$@" )
   fi
-  echo "ARGS: $INPUT"
 
-  for ARG in $INPUT[@]
-  do
-
+  for ARG in ${INPUT[@]}; do
     rc=$SUCCESS
     case $ARG in
-      "build") 
+      "$CLEANUP_STEP") 
+        cleanup_env
+      	rc=$?
+      	;;
+      "$BUILD_STEP") 
       	build
       	rc=$?
       	;;
-      "deploy") 
+      "$DEPLOY_STEP") 
         deploy
       	rc=$?
       	;;
-      "remove") 
-        remove
-      	rc=$?
-      	;;
-      "tests") 
+      "$TEST_STEP") 
         tests
       	rc=$?
       	;;

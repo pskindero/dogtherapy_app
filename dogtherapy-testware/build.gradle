@@ -1,11 +1,9 @@
-
- 
 dependencies {
    	compile libraries.selenium
    	compile libraries.junit4
    	
 	compile libraries.spring_boot
-	compile libraries:spring_boot_thymeleaf
+	compile libraries.spring_boot_thymeleaf
     compile libraries.spring_boot_test
 
     compile("org.springframework:spring-web:5.0.4.RELEASE")
@@ -14,4 +12,8 @@ dependencies {
     compile group: 'io.projectreactor.ipc', name: 'reactor-netty', version: '0.7.5.RELEASE'
  }
  
+ test {
+ 	//Skip tests during build
+ 	 exclude 'com/**'
+ }
  

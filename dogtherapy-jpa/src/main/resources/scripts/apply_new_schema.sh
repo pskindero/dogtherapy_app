@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #For development purpose
-
 PSQL=/usr/bin/psql
 
 SQL_SCRIPTS_DIR=$( cd "$(dirname "${BASH_SOURCE[0]}")"/../sql ; pwd -P )

@@ -12,6 +12,20 @@ dependencies {
     compile group: 'io.projectreactor.ipc', name: 'reactor-netty', version: '0.7.5.RELEASE'
  }
  
+configurations {
+    jar.archiveName = 'testware.jar'
+}
+
+jar {
+  manifest { 
+    attributes "Main-Class": "com.pskindero.dogtherapy.test.TestRunner"
+  }  
+
+  from {
+    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+  }
+}
+ 
  test {
  	//Skip tests during build
  	 exclude 'com/**'

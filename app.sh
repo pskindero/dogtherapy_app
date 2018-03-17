@@ -20,7 +20,8 @@ ALL_STEPS="all"
 GRADLE=/usr/bin/gradle
 DOCKER=/usr/bin/docker
 DOCKER_COMPOSE=/usr/local/bin/docker-compose
-
+JAVA=/usr/lib/jvm/java-8-openjdk-amd64/bin/java
+TESTS_JAR=dogtherapy-testware/build/libs/testware.jar
 
 print_usage() {
   echo "Usage: " 
@@ -63,8 +64,13 @@ cleanup_env() {
 
 tests() { 
   echo "STARTING STEP - Run tests"
-  #TODO
-  rc=$?
+  if [ -e ${TESTS_JAR} ]; then
+    sudo chmod 777 ${TESTS_JAR}
+    ${JAVA} -classpath ${TESTS_JAR} com.pskindero.dogtherapy.test.TestRunner
+    rc=$?
+  else 
+  	rc=${FAILURE}
+  fi
   echo "FINISHED STEP - Build application, result: $rc"
   return $rc
 }

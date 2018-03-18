@@ -16,5 +16,6 @@ dependencies {
     compile libraries.spring_boot_security
     compile libraries.spring_data_jpa_starter
     compile libraries.postgre_jdbc_driver
+	compile libraries.spring_boot_thymeleaf
     compile project(':dogtherapy-jpa')
  }

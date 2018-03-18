@@ -2,7 +2,7 @@
 #
 # TODO:
 # - fix problem with wrong java in sudo mode
-#
+# - migrate script into build gradle
 
 SCR_NAME=$0
 
@@ -11,6 +11,7 @@ SUCCESS=0
 FAILURE=1
 
 #Input arguments
+WAIT_STEP="wait"
 CLEANUP_STEP="cleanup"
 BUILD_STEP="build"
 DEPLOY_STEP="deploy"
@@ -30,6 +31,7 @@ print_usage() {
   echo "  $CLEANUP_STEP"
   echo "  $BUILD_STEP"
   echo "  $DEPLOY_STEP"
+  echo "  $WAIT_STEP"
   echo "  $TEST_STEP"
   echo "  $ALL_STEPS"
 }
@@ -53,13 +55,21 @@ deploy() {
 
 cleanup_env() {
   echo "STARTING STEP - Cleanup environment"
-  sudo ${DOCKER} stop $(${DOCKER} ps -a -q)
-  sudo ${DOCKER} network rm $(${DOCKER} network ls -q)
-  sudo ${DOCKER} rm $(${DOCKER} ps -a -q)
+  sudo ${DOCKER} stop $(sudo ${DOCKER} ps -a -q)
+  sudo ${DOCKER} network rm $(sudo ${DOCKER} network ls -q)
+  sudo ${DOCKER} rm $(sudo ${DOCKER} ps -a -q)
   rc=$SUCCESS
   echo "FINISHED STEP - Cleanup environment, result: $rc"
   return $rc
   
+}
+
+waiting() {
+  DELAY=40 
+  echo "STARTING STEP - Waiting $DELAY sec"
+  sleep $DELAY
+  echo "FINISHED STEP - Waiting $DELAY sec, result: $rc"
+  return $rc
 }
 
 tests() { 
@@ -71,7 +81,7 @@ tests() {
   else 
   	rc=${FAILURE}
   fi
-  echo "FINISHED STEP - Build application, result: $rc"
+  echo "FINISHED STEP - Run tests, result: $rc"
   return $rc
 }
 
@@ -80,7 +90,7 @@ tests() {
 if [ $# != 0 ]; then
 
   if [[ "$#" == "1" && "$1" == "$ALL_STEPS" ]]; then
-    INPUT="$CLEANUP_STEP $BUILD_STEP $DEPLOY_STEP $TEST_STEP"
+    INPUT="$CLEANUP_STEP $BUILD_STEP $DEPLOY_STEP $WAIT_STEP $TEST_STEP"
   else
     INPUT=( "$@" )
   fi
@@ -98,6 +108,10 @@ if [ $# != 0 ]; then
       	;;
       "$DEPLOY_STEP") 
         deploy
+      	rc=$?
+      	;;
+      "$WAIT_STEP")
+        waiting
       	rc=$?
       	;;
       "$TEST_STEP") 

@@ -10,6 +10,7 @@ dependencies {
 
     compile group: 'org.springframework', name: 'spring-webflux', version: '5.0.4.RELEASE'    
     compile group: 'io.projectreactor.ipc', name: 'reactor-netty', version: '0.7.5.RELEASE'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
  }
  
 configurations {
@@ -25,9 +26,3 @@ jar {
     configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
   }
 }
- 
- test {
- 	//Skip tests during build
- 	 exclude 'com/**'
- }
- 

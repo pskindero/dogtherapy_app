@@ -8,16 +8,16 @@ public class WebMappingController {
 
 	@RequestMapping(value = {"/"})
 	public String homePage() {
-		return "index.html";
+		return "index";
 	}
 	
 	@RequestMapping(value = {"/administrator"})
 	public String adminPage() {
-		return "admin.html";
+		return "admin";
 	}
 	
 	@RequestMapping(value = {"/zaloguj"})
 	public String loginPage() {
-		return "login.html";
+		return "login";
 	}
 }

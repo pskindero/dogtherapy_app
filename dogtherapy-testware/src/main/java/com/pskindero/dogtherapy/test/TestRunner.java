@@ -1,6 +1,5 @@
 package com.pskindero.dogtherapy.test;
 
-
 import java.util.List;
 
 import org.junit.internal.TextListener;

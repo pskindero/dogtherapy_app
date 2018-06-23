@@ -8,6 +8,9 @@ import java.util.Set;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 public class EndpointsDefinitions {
+	
+	public static final String MAIN_PAGE_IP="https://172.168.0.100:8443";
+	public static final String BACKEND_IP="https://172.168.0.101:8443";
 
 	public static class EndpointDefinition {
 		private String url;
@@ -31,7 +34,7 @@ public class EndpointsDefinitions {
 	
 	
 	public static final EndpointDefinition CONTACT_ENDPOINT = 
-			new EndpointDefinition("https://172.168.0.101:8443/contact", RequestMethod.GET);
+			new EndpointDefinition(BACKEND_IP + "/contact", RequestMethod.GET);
 	
 	private Set<EndpointDefinition> allEndpoints;
 	
